@@ -656,7 +656,7 @@ proxies:
   tls: false
   network: tcp
 proxy-groups:
-- name: 本地 VLESS
+- name: 公益节点
   type: select
   proxies:
   - ♻️ 自动选择
@@ -776,20 +776,20 @@ rules:
 - IP-CIDR,5.28.195.0/24,REJECT,no-resolve
 - DOMAIN,safebrowsing.urlsec.qq.com,DIRECT
 - DOMAIN,safebrowsing.googleapis.com,DIRECT
-- DOMAIN,developer.apple.com,本地 VLESS
-- DOMAIN-SUFFIX,digicert.com,本地 VLESS
-- DOMAIN,ocsp.apple.com,本地 VLESS
-- DOMAIN,ocsp.comodoca.com,本地 VLESS
-- DOMAIN,ocsp.usertrust.com,本地 VLESS
-- DOMAIN,ocsp.sectigo.com,本地 VLESS
-- DOMAIN,ocsp.verisign.net,本地 VLESS
-- DOMAIN-SUFFIX,apple-dns.net,本地 VLESS
-- DOMAIN,testflight.apple.com,本地 VLESS
-- DOMAIN,sandbox.itunes.apple.com,本地 VLESS
-- DOMAIN,itunes.apple.com,本地 VLESS
-- DOMAIN-SUFFIX,apps.apple.com,本地 VLESS
-- DOMAIN-SUFFIX,blobstore.apple.com,本地 VLESS
-- DOMAIN,cvws.icloud-content.com,本地 VLESS
+- DOMAIN,developer.apple.com,公益节点
+- DOMAIN-SUFFIX,digicert.com,公益节点
+- DOMAIN,ocsp.apple.com,公益节点
+- DOMAIN,ocsp.comodoca.com,公益节点
+- DOMAIN,ocsp.usertrust.com,公益节点
+- DOMAIN,ocsp.sectigo.com,公益节点
+- DOMAIN,ocsp.verisign.net,公益节点
+- DOMAIN-SUFFIX,apple-dns.net,公益节点
+- DOMAIN,testflight.apple.com,公益节点
+- DOMAIN,sandbox.itunes.apple.com,公益节点
+- DOMAIN,itunes.apple.com,公益节点
+- DOMAIN-SUFFIX,apps.apple.com,公益节点
+- DOMAIN-SUFFIX,blobstore.apple.com,公益节点
+- DOMAIN,cvws.icloud-content.com,公益节点
 - DOMAIN-SUFFIX,mzstatic.com,DIRECT
 - DOMAIN-SUFFIX,itunes.apple.com,DIRECT
 - DOMAIN-SUFFIX,icloud.com,DIRECT
@@ -807,13 +807,13 @@ rules:
 - DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT
 - DOMAIN-SUFFIX,apple-mapkit.com,DIRECT
 - AND,((DST-PORT,443),(NETWORK,UDP)),REJECT
-- DOMAIN-SUFFIX,services.googleapis.cn,本地 VLESS
-- DOMAIN-SUFFIX,xn--ngstr-lra8j.com,本地 VLESS
-- RULE-SET,geolocation-!cn,本地 VLESS,no-resolve
+- DOMAIN-SUFFIX,services.googleapis.cn,公益节点
+- DOMAIN-SUFFIX,xn--ngstr-lra8j.com,公益节点
+- RULE-SET,geolocation-!cn,公益节点,no-resolve
 - RULE-SET,cn_domain,DIRECT,no-resolve
-- IP-CIDR,221.228.32.13/32,本地 VLESS
+- IP-CIDR,221.228.32.13/32,公益节点
 - RULE-SET,cn_ip,DIRECT
-- MATCH,本地 VLESS
+- MATCH,公益节点
 rule-anchor:
   ip:
     type: http
@@ -850,3 +850,4 @@ rule-providers:
     behavior: ipcidr
     format: mrs
     url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cn.mrs
+
