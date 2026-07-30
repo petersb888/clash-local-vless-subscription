@@ -1,0 +1,852 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+unified-delay: true
+tcp-concurrent: true
+ipv6: false
+geox-url:
+  geoip: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
+  geosite: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
+  mmdb: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb
+dns:
+  enable: true
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+  default-nameserver:
+  - system
+  - 119.29.29.29
+  - 223.5.5.5
+  - 114.114.114.114
+  - 2400:3200::1
+  nameserver:
+  - https://223.5.5.5/dns-query#skip-cert-verify=true
+  - https://doh.pub/dns-query#skip-cert-verify=true
+  - https://dns.alidns.com/dns-query#skip-cert-verify=true
+  - tls://223.5.5.5#skip-cert-verify=true
+  - tls://dot.pub#skip-cert-verify=true
+  - tls://dns.alidns.com#skip-cert-verify=true
+  proxy-server-nameserver:
+  - https://223.5.5.5/dns-query#skip-cert-verify=true
+  - https://doh.pub/dns-query#skip-cert-verify=true
+  - https://dns.alidns.com/dns-query#skip-cert-verify=true
+  - tls://223.5.5.5#skip-cert-verify=true
+  - tls://dot.pub#skip-cert-verify=true
+  - tls://dns.alidns.com#skip-cert-verify=true
+  fake-ip-filter:
+  - '*.lan'
+  - '*.localdomain'
+  - '*.example'
+  - '*.invalid'
+  - '*.localhost'
+  - '*.test'
+  - '*.local'
+  - '*.home.arpa'
+  - time.*.com
+  - time.*.gov
+  - time.*.edu.cn
+  - time.*.apple.com
+  - time1.*.com
+  - time2.*.com
+  - time3.*.com
+  - time4.*.com
+  - time5.*.com
+  - time6.*.com
+  - time7.*.com
+  - ntp.*.com
+  - ntp1.*.com
+  - ntp2.*.com
+  - ntp3.*.com
+  - ntp4.*.com
+  - ntp5.*.com
+  - ntp6.*.com
+  - ntp7.*.com
+  - '*.time.edu.cn'
+  - '*.ntp.org.cn'
+  - +.pool.ntp.org
+  - time1.cloud.tencent.com
+  - stun.*.*
+  - stun.*.*.*
+  - swscan.apple.com
+  - mesu.apple.com
+  - music.163.com
+  - '*.music.163.com'
+  - '*.126.net'
+  - musicapi.taihe.com
+  - music.taihe.com
+  - songsearch.kugou.com
+  - trackercdn.kugou.com
+  - '*.kuwo.cn'
+  - api-jooxtt.sanook.com
+  - api.joox.com
+  - y.qq.com
+  - '*.y.qq.com'
+  - streamoc.music.tc.qq.com
+  - mobileoc.music.tc.qq.com
+  - isure.stream.qqmusic.qq.com
+  - dl.stream.qqmusic.qq.com
+  - aqqmusic.tc.qq.com
+  - amobile.music.tc.qq.com
+  - localhost.ptlogin2.qq.com
+  - '*.msftconnecttest.com'
+  - '*.msftncsi.com'
+  - '*.xiami.com'
+  - '*.music.migu.cn'
+  - music.migu.cn
+  - +.wotgame.cn
+  - +.wggames.cn
+  - +.wowsgame.cn
+  - +.wargaming.net
+  - '*.*.*.srv.nintendo.net'
+  - '*.*.stun.playstation.net'
+  - xbox.*.*.microsoft.com
+  - '*.*.xboxlive.com'
+  - '*.ipv6.microsoft.com'
+  - teredo.*.*.*
+  - teredo.*.*
+  - speedtest.cros.wr.pvp.net
+  - +.jjvip8.com
+  - www.douyu.com
+  - activityapi.huya.com
+  - activityapi.huya.com.w.cdngslb.com
+  - www.bilibili.com
+  - api.bilibili.com
+  - a.w.bilicdn1.com
+proxies:
+- name: 美国专线-01
+  type: vless
+  server: us5-r.link-t7.com
+  port: 10242
+  uuid: 65ED2A4D-E1DB-4310-AB85-65C711BA873A
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: movie
+    grpc-mode: gun
+- name: 美国专线-02
+  type: vless
+  server: us5-r.link-t7.com
+  port: 10242
+  uuid: 65ED2A4D-E1DB-4310-AB85-65C711BA873A
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: movie
+    grpc-mode: gun
+- name: 美国专线-03
+  type: vless
+  server: us5-r.link-t7.com
+  port: 10242
+  uuid: 65ED2A4D-E1DB-4310-AB85-65C711BA873A
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: movie
+    grpc-mode: gun
+- name: 美国专线-04
+  type: vless
+  server: us5-r.link-t7.com
+  port: 10242
+  uuid: 65ED2A4D-E1DB-4310-AB85-65C711BA873A
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: movie
+    grpc-mode: gun
+- name: 美国中转-01
+  type: vless
+  server: zz.j-pan.ccwu.cc
+  port: 30001
+  uuid: 65c56e1f-5c41-40bc-b0b5-9346772476ca
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: edge
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: 1jkizvy42aHc-um3C7LgmBYRn6HFJomyk0F2T_i2PwA
+    short-id: 6d9478ae
+    spider-x: /
+  flow: xtls-rprx-vision
+  network: tcp
+- name: 美国中转-02
+  type: vless
+  server: zz.j-pan.ccwu.cc
+  port: 30001
+  uuid: 65c56e1f-5c41-40bc-b0b5-9346772476ca
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: edge
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: 1jkizvy42aHc-um3C7LgmBYRn6HFJomyk0F2T_i2PwA
+    short-id: 6d9478ae
+    spider-x: /
+  flow: xtls-rprx-vision
+  network: tcp
+- name: 美国家宽测试-01
+  type: vless
+  server: 180.178.60.252
+  port: 10000
+  uuid: 431fe973-a43a-4fac-bf83-2a772e0d0625
+  udp: true
+  tls: false
+  network: tcp
+- name: 美国家宽测试-02
+  type: vless
+  server: 180.178.60.252
+  port: 10000
+  uuid: 431fe973-a43a-4fac-bf83-2a772e0d0625
+  udp: true
+  tls: false
+  network: tcp
+- name: 香港专线-01
+  type: vless
+  server: xmm.130209.xyz
+  port: 2053
+  uuid: 65c56e1f-5c41-40bc-b0b5-9346772476ca
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: edge
+  servername: hk.lesserafim.cc.cd
+  network: ws
+  ws-opts:
+    path: /api/v2/check_update
+    headers:
+      Host: hk.lesserafim.cc.cd
+- name: 香港专线-02
+  type: vless
+  server: xmm.130209.xyz
+  port: 2053
+  uuid: 65c56e1f-5c41-40bc-b0b5-9346772476ca
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: edge
+  servername: hk.lesserafim.cc.cd
+  network: ws
+  ws-opts:
+    path: /api/v2/check_update
+    headers:
+      Host: hk.lesserafim.cc.cd
+- name: 香港专线-03
+  type: vless
+  server: xmm.130209.xyz
+  port: 2053
+  uuid: 65c56e1f-5c41-40bc-b0b5-9346772476ca
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: edge
+  servername: hk.lesserafim.cc.cd
+  network: ws
+  ws-opts:
+    path: /api/v2/check_update
+    headers:
+      Host: hk.lesserafim.cc.cd
+- name: 香港专线-04
+  type: vless
+  server: xmm.130209.xyz
+  port: 2053
+  uuid: 65c56e1f-5c41-40bc-b0b5-9346772476ca
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: edge
+  servername: hk.lesserafim.cc.cd
+  network: ws
+  ws-opts:
+    path: /api/v2/check_update
+    headers:
+      Host: hk.lesserafim.cc.cd
+- name: 香港家宽测试-01
+  type: vless
+  server: 207.174.133.222
+  port: 10000
+  uuid: 431fe973-a43a-4fac-bf83-2a772e0d0625
+  udp: true
+  tls: false
+  network: tcp
+- name: 香港家宽测试-02
+  type: vless
+  server: 207.174.133.222
+  port: 10000
+  uuid: 431fe973-a43a-4fac-bf83-2a772e0d0625
+  udp: true
+  tls: false
+  network: tcp
+- name: 台湾专线-01
+  type: vless
+  server: 211.76.176.192
+  port: 10000
+  uuid: 431fe973-a43a-4fac-bf83-2a772e0d0625
+  udp: true
+  tls: false
+  network: tcp
+- name: 台湾专线-02
+  type: vless
+  server: 211.76.176.192
+  port: 10000
+  uuid: 431fe973-a43a-4fac-bf83-2a772e0d0625
+  udp: true
+  tls: false
+  network: tcp
+- name: 台湾专线-03
+  type: vless
+  server: 211.76.176.192
+  port: 10000
+  uuid: 431fe973-a43a-4fac-bf83-2a772e0d0625
+  udp: true
+  tls: false
+  network: tcp
+- name: 台湾专线-04
+  type: vless
+  server: 211.76.176.192
+  port: 10000
+  uuid: 431fe973-a43a-4fac-bf83-2a772e0d0625
+  udp: true
+  tls: false
+  network: tcp
+- name: 台湾家宽测试-01
+  type: vless
+  server: 211.76.176.192
+  port: 10000
+  uuid: 431fe973-a43a-4fac-bf83-2a772e0d0625
+  udp: true
+  tls: false
+  network: tcp
+- name: 台湾家宽测试-02
+  type: vless
+  server: 211.76.176.192
+  port: 10000
+  uuid: 431fe973-a43a-4fac-bf83-2a772e0d0625
+  udp: true
+  tls: false
+  network: tcp
+- name: 日本专线-01
+  type: vless
+  server: jp1-r.link-t7.com
+  port: 10031
+  uuid: 65ED2A4D-E1DB-4310-AB85-65C711BA873A
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+    grpc-mode: gun
+- name: 日本专线-02
+  type: vless
+  server: jp2-r.link-t7.com
+  port: 10032
+  uuid: 65ED2A4D-E1DB-4310-AB85-65C711BA873A
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+    grpc-mode: gun
+- name: 日本专线-03
+  type: vless
+  server: jp5-r.link-t7.com
+  port: 10035
+  uuid: 65ED2A4D-E1DB-4310-AB85-65C711BA873A
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+    grpc-mode: gun
+- name: 日本专线-04
+  type: vless
+  server: jp4-r.link-t7.com
+  port: 10034
+  uuid: 65ED2A4D-E1DB-4310-AB85-65C711BA873A
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+    grpc-mode: gun
+- name: 日本家宽测试-01
+  type: vless
+  server: japan.dickporn.ccwu.cc
+  port: 443
+  uuid: 65c56e1f-5c41-40bc-b0b5-9346772476ca
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: edge
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: e7IxlEMaGVDktzv36w0fRE-Y5lPsNVOIM0WQ-_YVm3I
+    short-id: 5f90d1
+    spider-x: /
+  flow: xtls-rprx-vision
+  network: tcp
+- name: 日本家宽测试-02
+  type: vless
+  server: japan.dickporn.ccwu.cc
+  port: 443
+  uuid: 65c56e1f-5c41-40bc-b0b5-9346772476ca
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: edge
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: e7IxlEMaGVDktzv36w0fRE-Y5lPsNVOIM0WQ-_YVm3I
+    short-id: 5f90d1
+    spider-x: /
+  flow: xtls-rprx-vision
+  network: tcp
+- name: 新加坡专线-01
+  type: vless
+  server: sg1-r.link-t7.com
+  port: 10036
+  uuid: 65ED2A4D-E1DB-4310-AB85-65C711BA873A
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+    grpc-mode: gun
+- name: 新加坡专线-02
+  type: vless
+  server: sg2-r.link-t7.com
+  port: 10037
+  uuid: 65ED2A4D-E1DB-4310-AB85-65C711BA873A
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+    grpc-mode: gun
+- name: 新加坡专线-03
+  type: vless
+  server: sg1-r.link-t7.com
+  port: 10036
+  uuid: 65ED2A4D-E1DB-4310-AB85-65C711BA873A
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+    grpc-mode: gun
+- name: 新加坡专线-04
+  type: vless
+  server: sg2-r.link-t7.com
+  port: 10037
+  uuid: 65ED2A4D-E1DB-4310-AB85-65C711BA873A
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+    grpc-mode: gun
+- name: 韩国专线-01
+  type: vless
+  server: kr2-r.link-t7.com
+  port: 10047
+  uuid: 65ED2A4D-E1DB-4310-AB85-65C711BA873A
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+    grpc-mode: gun
+- name: 韩国专线-02
+  type: vless
+  server: kr2-r.link-t7.com
+  port: 10047
+  uuid: 65ED2A4D-E1DB-4310-AB85-65C711BA873A
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+    grpc-mode: gun
+- name: 韩国专线-03
+  type: vless
+  server: kr3-r.link-t7.com
+  port: 10048
+  uuid: 65ED2A4D-E1DB-4310-AB85-65C711BA873A
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+    grpc-mode: gun
+- name: 韩国专线-04
+  type: vless
+  server: kr3-r.link-t7.com
+  port: 10048
+  uuid: 65ED2A4D-E1DB-4310-AB85-65C711BA873A
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE
+    short-id: 686c0ef0
+  network: grpc
+  grpc-opts:
+    grpc-service-name: update
+    grpc-mode: gun
+- name: 土耳其-01
+  type: vless
+  server: zz.j-pan.ccwu.cc
+  port: 20200
+  uuid: 65c56e1f-5c41-40bc-b0b5-9346772476ca
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: edge
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: evQlrrZQEeFbReOSfTKQSBmT_1iALaxIaP3uV53wFVg
+    short-id: 1720b171fb994c69
+    spider-x: /
+  flow: xtls-rprx-vision
+  network: tcp
+- name: 土耳其-02
+  type: vless
+  server: zz.j-pan.ccwu.cc
+  port: 20200
+  uuid: 65c56e1f-5c41-40bc-b0b5-9346772476ca
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: edge
+  servername: s0.awsstatic.com
+  reality-opts:
+    public-key: evQlrrZQEeFbReOSfTKQSBmT_1iALaxIaP3uV53wFVg
+    short-id: 1720b171fb994c69
+    spider-x: /
+  flow: xtls-rprx-vision
+  network: tcp
+- name: 美国免费-01
+  type: vless
+  server: 180.178.60.252
+  port: 10000
+  uuid: 431fe973-a43a-4fac-bf83-2a772e0d0625
+  udp: true
+  tls: false
+  network: tcp
+- name: 美国免费-02
+  type: vless
+  server: 180.178.60.252
+  port: 10000
+  uuid: 431fe973-a43a-4fac-bf83-2a772e0d0625
+  udp: true
+  tls: false
+  network: tcp
+- name: 美国免费-03
+  type: vless
+  server: 180.178.60.252
+  port: 10000
+  uuid: 431fe973-a43a-4fac-bf83-2a772e0d0625
+  udp: true
+  tls: false
+  network: tcp
+- name: 美国免费-04
+  type: vless
+  server: 180.178.60.252
+  port: 10000
+  uuid: 431fe973-a43a-4fac-bf83-2a772e0d0625
+  udp: true
+  tls: false
+  network: tcp
+proxy-groups:
+- name: 本地 VLESS
+  type: select
+  proxies:
+  - ♻️ 自动选择
+  - 美国专线-01
+  - 美国专线-02
+  - 美国专线-03
+  - 美国专线-04
+  - 美国中转-01
+  - 美国中转-02
+  - 美国家宽测试-01
+  - 美国家宽测试-02
+  - 香港专线-01
+  - 香港专线-02
+  - 香港专线-03
+  - 香港专线-04
+  - 香港家宽测试-01
+  - 香港家宽测试-02
+  - 台湾专线-01
+  - 台湾专线-02
+  - 台湾专线-03
+  - 台湾专线-04
+  - 台湾家宽测试-01
+  - 台湾家宽测试-02
+  - 日本专线-01
+  - 日本专线-02
+  - 日本专线-03
+  - 日本专线-04
+  - 日本家宽测试-01
+  - 日本家宽测试-02
+  - 新加坡专线-01
+  - 新加坡专线-02
+  - 新加坡专线-03
+  - 新加坡专线-04
+  - 韩国专线-01
+  - 韩国专线-02
+  - 韩国专线-03
+  - 韩国专线-04
+  - 土耳其-01
+  - 土耳其-02
+  - 美国免费-01
+  - 美国免费-02
+  - 美国免费-03
+  - 美国免费-04
+  url: http://www.apple.com/library/test/success.html
+  interval: 1800
+- name: ♻️ 自动选择
+  type: url-test
+  proxies:
+  - 美国专线-01
+  - 美国专线-02
+  - 美国专线-03
+  - 美国专线-04
+  - 美国中转-01
+  - 美国中转-02
+  - 美国家宽测试-01
+  - 美国家宽测试-02
+  - 香港专线-01
+  - 香港专线-02
+  - 香港专线-03
+  - 香港专线-04
+  - 香港家宽测试-01
+  - 香港家宽测试-02
+  - 台湾专线-01
+  - 台湾专线-02
+  - 台湾专线-03
+  - 台湾专线-04
+  - 台湾家宽测试-01
+  - 台湾家宽测试-02
+  - 日本专线-01
+  - 日本专线-02
+  - 日本专线-03
+  - 日本专线-04
+  - 日本家宽测试-01
+  - 日本家宽测试-02
+  - 新加坡专线-01
+  - 新加坡专线-02
+  - 新加坡专线-03
+  - 新加坡专线-04
+  - 韩国专线-01
+  - 韩国专线-02
+  - 韩国专线-03
+  - 韩国专线-04
+  - 土耳其-01
+  - 土耳其-02
+  - 美国免费-01
+  - 美国免费-02
+  - 美国免费-03
+  - 美国免费-04
+  url: http://www.apple.com/library/test/success.html
+  interval: 1800
+rules:
+- DOMAIN,api.ip.sb,REJECT
+- DOMAIN,ipapi.co,REJECT
+- DOMAIN,api.ipapi.is,REJECT
+- DOMAIN,ipwho.is,REJECT
+- DOMAIN,injections.adguard.org,DIRECT
+- DOMAIN,local.adguard.org,DIRECT
+- IP-CIDR,0.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
+- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+- IP-CIDR,192.0.0.0/24,DIRECT,no-resolve
+- IP-CIDR,192.0.2.0/24,DIRECT,no-resolve
+- IP-CIDR,192.88.99.0/24,DIRECT,no-resolve
+- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+- IP-CIDR,198.18.0.0/15,DIRECT,no-resolve
+- IP-CIDR,198.51.100.0/24,DIRECT,no-resolve
+- IP-CIDR,203.0.113.0/24,DIRECT,no-resolve
+- IP-CIDR,224.0.0.0/3,DIRECT,no-resolve
+- IP-CIDR,::/127,DIRECT,no-resolve
+- IP-CIDR,fc00::/7,DIRECT,no-resolve
+- IP-CIDR,fe80::/10,DIRECT,no-resolve
+- IP-CIDR,ff00::/8,DIRECT,no-resolve
+- RULE-SET,private_domain,DIRECT,no-resolve
+- IP-CIDR,5.28.195.0/24,REJECT,no-resolve
+- DOMAIN,safebrowsing.urlsec.qq.com,DIRECT
+- DOMAIN,safebrowsing.googleapis.com,DIRECT
+- DOMAIN,developer.apple.com,本地 VLESS
+- DOMAIN-SUFFIX,digicert.com,本地 VLESS
+- DOMAIN,ocsp.apple.com,本地 VLESS
+- DOMAIN,ocsp.comodoca.com,本地 VLESS
+- DOMAIN,ocsp.usertrust.com,本地 VLESS
+- DOMAIN,ocsp.sectigo.com,本地 VLESS
+- DOMAIN,ocsp.verisign.net,本地 VLESS
+- DOMAIN-SUFFIX,apple-dns.net,本地 VLESS
+- DOMAIN,testflight.apple.com,本地 VLESS
+- DOMAIN,sandbox.itunes.apple.com,本地 VLESS
+- DOMAIN,itunes.apple.com,本地 VLESS
+- DOMAIN-SUFFIX,apps.apple.com,本地 VLESS
+- DOMAIN-SUFFIX,blobstore.apple.com,本地 VLESS
+- DOMAIN,cvws.icloud-content.com,本地 VLESS
+- DOMAIN-SUFFIX,mzstatic.com,DIRECT
+- DOMAIN-SUFFIX,itunes.apple.com,DIRECT
+- DOMAIN-SUFFIX,icloud.com,DIRECT
+- DOMAIN-SUFFIX,icloud-content.com,DIRECT
+- DOMAIN-SUFFIX,me.com,DIRECT
+- DOMAIN-SUFFIX,aaplimg.com,DIRECT
+- DOMAIN-SUFFIX,cdn20.com,DIRECT
+- DOMAIN-SUFFIX,cdn-apple.com,DIRECT
+- DOMAIN-SUFFIX,akadns.net,DIRECT
+- DOMAIN-SUFFIX,akamaiedge.net,DIRECT
+- DOMAIN-SUFFIX,edgekey.net,DIRECT
+- DOMAIN-SUFFIX,mwcloudcdn.com,DIRECT
+- DOMAIN-SUFFIX,mwcname.com,DIRECT
+- DOMAIN-SUFFIX,apple.com,DIRECT
+- DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT
+- DOMAIN-SUFFIX,apple-mapkit.com,DIRECT
+- AND,((DST-PORT,443),(NETWORK,UDP)),REJECT
+- DOMAIN-SUFFIX,services.googleapis.cn,本地 VLESS
+- DOMAIN-SUFFIX,xn--ngstr-lra8j.com,本地 VLESS
+- RULE-SET,geolocation-!cn,本地 VLESS,no-resolve
+- RULE-SET,cn_domain,DIRECT,no-resolve
+- IP-CIDR,221.228.32.13/32,本地 VLESS
+- RULE-SET,cn_ip,DIRECT
+- MATCH,本地 VLESS
+rule-anchor:
+  ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+  domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+rule-providers:
+  private_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/private.mrs
+  cn_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.mrs
+  geolocation-!cn:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.mrs
+  cn_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cn.mrs
